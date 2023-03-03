@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :game
-  resources :employee
-  resources :area
+  resources :games
+  resources :employees
+  resources :areas
 end
