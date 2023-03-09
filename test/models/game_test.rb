@@ -6,7 +6,7 @@ class GameTest < ActiveSupport::TestCase
   # end
 
   test 'game cant be created with excluded range of year' do
-    game = Game.new(year: 2023)
+    game = Game.new(year: 2010)
     assert_not game.save
   end
 end
