@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  year: MyString
-  couples: MyString
-  left: MyString
+  year: 2023
+  couples: {'sebastian','guevara'}
+  left: 'parra'
 
 two:
-  year: MyString
-  couples: MyString
-  left: MyString
+  year: 2020
+  couples: {'aleandro','alejandro2'}
+  left: 'alejandor'
