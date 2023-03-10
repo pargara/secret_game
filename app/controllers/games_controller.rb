@@ -6,9 +6,8 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    @generator = PairGenerator.new
-    @game.couples = @generator.pairs
-    @game.left = @generator.leftover
+
+    setting_names
 
     if @game.save
       render json: @game, only: [:year], status: :created
@@ -21,5 +20,11 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:year, :left, :couples)
+  end
+
+  def setting_names
+    @generator = PairGenerator.new
+    @game.couples = @generator.pairs
+    @game.left = @generator.leftover
   end
 end
