@@ -7,10 +7,10 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @generator = PairGenerator.new
-    @game.couples = @generator.generate_pairs
-    @game.left = @generator.leftover_employee
+    @game.couples = @generator.pairs
+    @game.left = @generator.leftover
 
-    if @game.save!
+    if @game.save
       render json: @game, only: [:year], status: :created
     else
       render json: @game.errors, status: :unprocessable_entity
@@ -20,6 +20,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:year, :left, couples: [])
+    params.require(:game).permit(:year, :left, :couples)
   end
 end
