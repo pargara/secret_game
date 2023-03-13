@@ -12,7 +12,7 @@ class PairGenerator
     shuffle_employees = @names.shuffle
     shuffle_employees.each_slice(2) do |a, b|
       if b.nil?
-        @leftover = b
+        @leftover = (a || b)
       else
         @pairs << [a, b]
       end
