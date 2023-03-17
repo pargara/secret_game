@@ -27,30 +27,4 @@ class PairGenerator
       end
     end
   end
-
-  def check_previous_game
-    previous_games = Game.where(year: (self.year - 2)..(self.year - 1)).order(year: :asc)
-
-    previous_game_pairs = previous_games.flat_map(&:pairs)
-    @has_repeated_pairs = !previous_game_pairs & @pairs.empty?
-
-    generate_pairs until @has_repeated_pairs
-  end
-
-  def change_leftover
-    last_game = Game.where(year: (self.year - 1))
-
-    previous_game_leftover = last_game.flat_map(&:leftover)
-
-    if self.leftover == previous_game_leftover
-      rand_position = rand(@pairs.length)
-      new_leftover = @pairs[rand_position]
-      @pairs[rand_position] = self.leftover
-      self.leftover = new_leftover
-    end
-  end
-
-  def self.generate_pairs
-    generate_pairs
-  end
 end
