@@ -37,9 +37,9 @@ class GamesController < ApplicationController
       previous_game_pairs_parsed = previous_game_pairs.map { |str| eval(str) }
       games_couples_parsed = eval(@game.couples)
 
+      change_leftover
       create_couples_until_not_repeated(previous_game_pairs_parsed, games_couples_parsed)
     end
-    # change_leftover
   end
 
   #def create_couples_until_not_repeated(previous_game_pairs_parsed,games_couples_parsed)
