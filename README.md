@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+    2.7.6
 
-* System dependencies
+* Rails version
+    7.0.4  
 
-* Configuration
+## Available endpoints
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| Method      | Endpoint      | Description                    |
+|:------------|:-------------:|-------------------------------:|
+|   GET       |    /areas     | Get all the areas              |
+|   POST      |    /areas     | Create a new area              |
+|   GET       |    /employees | Get all the employees          |
+|   POST      |    /employees | Create a new employee          |
+|   GET       |    /games     | Get all the secret games       |
+|   POST      |    /games     | Create a new secret game entry |
