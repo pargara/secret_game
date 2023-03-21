@@ -7,7 +7,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
 
-    create_couples
+    # create_couples
 
     if @game.save
       render json: @game, only: [:year], status: :created
@@ -26,7 +26,7 @@ class GamesController < ApplicationController
     @generator = PairGenerator.new
     @game.couples = @generator.pairs
     @game.left = @generator.leftover
-    check_previous_game
+    PairGenerator.check_previous_game(@game)
   end
 
   def check_previous_game
