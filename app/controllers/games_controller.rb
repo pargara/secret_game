@@ -1,14 +1,15 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
-    render json: @games, only: %i[id couples left]
+    # render json: @games, only: %i[id couples left]
   end
 
   def create
     @game = Game.new(game_params)
 
     if @game.save
-      render json: @game, only: [:year], status: :created
+      render :create, status: :created
+      #render json: @game, only: [:year], status: :created
     else
       render json: @game.errors, status: :unprocessable_entity
     end
