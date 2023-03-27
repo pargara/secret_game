@@ -1,7 +1,7 @@
 module GameLogic
-  attr_accessor :pairs, :names
-
   extend ActiveSupport::Concern
+
+  attr_accessor :pairs, :names
 
   def setting_employees
     @employees = Employee.all
@@ -37,6 +37,7 @@ module GameLogic
   def check_previous_game
     previous_games = Game.where(year: (self.year - 2)..(self.year - 1)).order(year: :asc)
     previous_game_pairs = previous_games.flat_map(&:couples)
+
     if previous_games.length >= 1
       previous_game_pairs_parsed = previous_game_pairs.map { |str| eval(str) }
       games_couples_parsed = eval(self.couples)
@@ -87,6 +88,7 @@ module GameLogic
     if !previous_game_leftover.empty? && previous_game_leftover.include?(self.left)
       rand_position = rand(self.pairs.length)
       new_leftover = self.pairs[rand_position][rand_position]
+
       self.pairs[rand_position] = self.left
       self.left = new_leftover
     end
