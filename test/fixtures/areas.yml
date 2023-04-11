@@ -1,7 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+area_one:
+  name: 'Back End'
 
-two:
-  name: MyString
+area_two:
+  name: 'Front End'
+
+area_three:
+  name: 'HR'

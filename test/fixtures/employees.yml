@@ -1,11 +1,36 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  area: one
-  name: MyString
-  year_game: MyString
+employee_one:
+  area: area_one
+  name: 'sebastian'
+  year_game: 2023
 
-two:
-  area: two
-  name: MyString
-  year_game: MyString
+employee_two:
+  area: area_one
+  name: 'jairolas'
+  year_game: 2023
+
+employee_three:
+  area: area_one
+  name: 'anderson'
+  year_game: 2023
+
+employee_four:
+  area: area_one
+  name: 'jose'
+  year_game: 2023
+ 
+employee_five:
+  area: area_one
+  name: 'robin'
+  year_game: 2023
+
+employee_six:
+  area: area_one
+  name: 'alejo'
+  year_game: 2023 
+ 
+employee_seve:
+  area: area_one
+  name: 'juancho'
+  year_game: 2023 

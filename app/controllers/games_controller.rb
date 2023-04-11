@@ -8,7 +8,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     if @game.save
-      render json: @game, only: [:year], status: :created
+      render json: @game, only: [:year, :id], status: :created
     else
       render json: @game.errors, status: :unprocessable_entity
     end
