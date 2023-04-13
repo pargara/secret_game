@@ -1,11 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+game_one:
   year: 2023
-  couples: {'sebastian','guevara'}
-  left: 'parra'
+  couples: ['sebastian','jairolas']
+  left: 'anderson'
 
-two:
-  year: 2020
-  couples: {'aleandro','alejandro2'}
-  left: 'alejandor'
+game_two:
+  year: 2024
+  couples: ['sebastian','anderson']
+  left: 'jairolas'
+
+ 
+game_three:
+  year: 2025
+  couples: ['jairolas','anderson']
+  left: 'sebastian'

@@ -15,24 +15,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_191556) do
   enable_extension "plpgsql"
 
   create_table "areas", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|
     t.bigint "area_id", null: false
-    t.string "name"
-    t.integer "year_game"
+    t.string "name", null: false
+    t.integer "year_game", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["area_id"], name: "index_employees_on_area_id"
   end
 
   create_table "games", force: :cascade do |t|
-    t.integer "year"
-    t.string "couples"
-    t.string "left"
+    t.integer "year", null: false
+    t.json "couples"
+    t.json "left"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
